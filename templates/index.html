@@ -1,0 +1,27 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta http-equiv="X-UA-Compatible" content="IE=edge">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>YOLO Detection</title>#}
+{#</head>#}
+{#<body>#}
+{#<h1>YOLO Object Detection</h1>#}
+{#<p>Detected Person Count: <span id="personCount"></span></p>#}
+{##}
+{#<script>#}
+{#    // 클라이언트에서 주기적으로 디텍션된 사람 수를 가져오는 예시 코드#}
+{#    function getDetectionCount() {#}
+{#        fetch('/get_detection_count')#}
+{#            .then(response => response.json())#}
+{#            .then(data => {#}
+{#                document.getElementById('personCount').innerText = data.person_count;#}
+{#            });#}
+{#    }#}
+{##}
+{#    // 주기적으로 업데이트 (예: 1초마다)#}
+{#    setInterval(getDetectionCount, 1000);#}
+{#</script>#}
+{#</body>#}
+{#</html>#}
