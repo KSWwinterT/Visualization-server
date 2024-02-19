@@ -1,9 +1,13 @@
 import numpy as np
-from flask import Flask, Response
+from flask import Flask, Response, render_template
 import serial
 import cv2
 
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('serial.js')
 
 # 시리얼 포트 설정
 ser = serial.Serial(
@@ -30,7 +34,7 @@ def video_stream():
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
-@app.route('/')
+@app.route('/video_stream')
 def index():
     return Response(video_stream(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
